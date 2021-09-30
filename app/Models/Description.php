@@ -10,6 +10,7 @@ class Description extends Model
     use HasFactory;
     protected $table = 'products_description';
     protected $primaryKey = 'products_description_id';
+    protected $with = ['products' , 'language'];
 
     public function products()
     {

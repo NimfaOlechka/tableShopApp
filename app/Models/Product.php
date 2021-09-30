@@ -19,8 +19,14 @@ class Product extends Model
 
     public function languages()
     {
-        return $this->belongsToMany(Language::class, 'products_description', 'products_id','languages_id');
+        return $this->hasManyThrough(Language::class, 'products_description', 'products_id','languages_id');
     }
+
+    /* public static function products_description($language_id = '1')
+    {      
+        return static::all()->firstWhere('slug',$slug);        
+
+    } */
 
     
 }

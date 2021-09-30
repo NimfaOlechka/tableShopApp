@@ -19,6 +19,6 @@ class Language extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'products_description', 'products_id','languages_id');
+        return $this->hasManyThrough(Product::class, 'products_description', 'products_id','languages_id');
     }
 }
